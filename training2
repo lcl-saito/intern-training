@@ -1,0 +1,7 @@
+def express_date(year = nil,month = nil)
+  if  (0 == year / 4 &&  !0 == year / 100) || (0 == year / 4 && 0 == year / 400)
+    puts "閏年です。"
+  else
+    puts "通常年です。"
+  end
+end
