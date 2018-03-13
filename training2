@@ -3,37 +3,28 @@ def express_date(year = nil,month = nil)
   if year % 4 == 0 && year % 100 != 0 || year % 400 == 0
     if month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12
       dates = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
-      dates.each do |date|
-        puts "#{year}年#{month}月#{date}日"
-      end
+
     elsif month == 4 || month == 6 || month == 9 || month == 11
       dates = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
-      dates.each do |date|
-        puts "#{year}年#{month}月#{date}日"
-      end
+
     elsif month == 2
       dates = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]
-      dates.each do |date|
-        puts "#{year}年#{month}月#{date}日"
-      end
+
     end
   else
     if month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12
       dates = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
-      dates.each do |date|
-        puts "#{year}年#{month}月#{date}日"
-      end
+
     elsif month == 4 || month == 6 || month == 9 || month == 11
       dates = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
-      dates.each do |date|
-        puts "#{year}年#{month}月#{date}日"
-      end
+
     elsif month == 2
       dates = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]
-      dates.each do |date|
-        puts "#{year}年#{month}月#{date}日"
-      end
+
     end
-   end
+  end
+  dates.each do |date|
+    puts "#{year}年#{month}月#{date}日"
+  end
  end
-express_date(1001,11)
+express_date(2000,2)
