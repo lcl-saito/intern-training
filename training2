@@ -4,21 +4,15 @@ def express_date(year = nil,month = nil)
   dates_30 = (1..30).to_a
   dates_29 = (1..29).to_a
   dates_28 = (1..28).to_a
-
-  if leap_year?(year)
-    if odd_dates?(month)
-      dates = dates_31
-    elsif even_dates?(month)
-      dates = dates_30
-    elsif month == 2
+  
+  if odd_dates?(month)
+    dates = dates_31
+  elsif even_dates?(month)
+    dates = dates_30
+  elsif month == 2
+    if leap_year?(year)
       dates = dates_29
-    end
-  else
-    if odd_dates?(month)
-      dates = dates_31
-    elsif even_dates?(month)
-      dates = dates_30
-    elsif month == 2
+    else
       dates = dates_28
     end
   end
@@ -42,5 +36,5 @@ def even_dates?(month)
   months.include?(month)
 end
 
-express_date(2000,11)
+express_date(2001,2)
 
