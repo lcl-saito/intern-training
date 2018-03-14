@@ -1,53 +1,46 @@
 def express_date(year = nil,month = nil)
 
-  day_31 = (1..31).to_a
-  day_30 = (1..30).to_a
-  day_29 = (1..29).to_a
-  day_28 = (1..28).to_a
+  dates_31 = (1..31).to_a
+  dates_30 = (1..30).to_a
+  dates_29 = (1..29).to_a
+  dates_28 = (1..28).to_a
 
   if leap_year?(year)
-    if odd_days?(month)
-      dates = day_31
-
-    elsif even_days?(month)
-      dates = day_30
-
+    if odd_dates?(month)
+      dates = dates_31
+    elsif even_dates?(month)
+      dates = dates_30
     elsif month == 2
-      dates = day_29
-
+      dates = dates_29
     end
   else
-    if odd_days?(month)
-      dates = day_31
-
-    elsif even_days?(month)
-      dates = day_30
-
+    if odd_dates?(month)
+      dates = dates_31
+    elsif even_dates?(month)
+      dates = dates_30
     elsif month == 2
-      dates = day_28
-
+      dates = dates_28
     end
   end
 
   dates.each do |date|
     puts "#{year}年#{month}月#{date}日"
   end
-
 end
 
 def leap_year?(year)
   year % 4 == 0 && year % 100 != 0 || year % 400 == 0
 end
 
-def odd_days?(month)
+def odd_dates?(month)
   month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12
 end
 
-def even_days?(month)
+def even_dates?(month)
   month == 4 || month == 6 || month == 9 || month == 11
 end
 
-express_date(2000,1)
+express_date(2001,1)
 
 
 
