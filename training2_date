@@ -2,15 +2,15 @@ require 'date'
 
 def express_date(year,month)
 
-  day = Date.new(year,month,-1)
-  month_last_day = day.day
-  current_day = 1
+  date = Date.new(year,month,-1)
+  month_last_date = date.day
+  initial_date = 1
 
-  while month_last_day >= current_day
-    puts  "#{year}年#{month}月#{current_day}日"
-    current_day += current_day + 1
+  while month_last_date >= initial_date
+    puts  "#{year}年#{month}月#{initial_date}日"
+    initial_date = initial_date + 1
     end
 end
 
-  express_date(1995,4)
+  express_date(1996,2)
 
