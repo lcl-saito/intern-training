@@ -1,10 +1,10 @@
-def express_date(year = nil,month = nil)
+def express_date(year,month)
 
   dates_31 = (1..31).to_a
   dates_30 = (1..30).to_a
   dates_29 = (1..29).to_a
   dates_28 = (1..28).to_a
-  
+
   if odd_dates?(month)
     dates = dates_31
   elsif even_dates?(month)
