@@ -1,0 +1,38 @@
+require 'date'
+
+def express_date(year,month)
+
+  dates_31 = (1..31).to_a
+  dates_30 = (1..30).to_a
+  dates_29 = (1..29).to_a
+  dates_28 = (1..28).to_a
+
+  if odd_dates?(month)
+    dates = dates_31
+  elsif even_dates?(month)
+    dates = dates_30
+  elsif month == 2
+    if Date.new(year).leap?
+      dates = dates_29
+    else
+      dates = dates_28
+    end
+  end
+
+  dates.each do |date|
+    puts "#{year}年#{month}月#{date}日"
+  end
+end
+
+def odd_dates?(month)
+  months = [ 1 , 3 , 5 , 7 , 8 , 10 , 12 ]
+  months.include?(month)
+end
+
+def even_dates?(month)
+  months = [ 4 , 6 , 9 , 11 ]
+  months.include?(month)
+end
+
+express_date(2000,2)
+
