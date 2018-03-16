@@ -10,7 +10,7 @@ def express_addresses(*address)
 end
 
 express_addresses(
-    "asia@gmail.com", "india@gmail.com" , "asia@ezweb.ne.jp" , "india@gmail.com" ,
-    "asia@gmail.com" , "india@ezweb.ne.jp" , "japan@ezweb.ne.jp" , "japan@ezweb.ne.jp" , "asia@ezweb.ne.jp" ,
-    "japan@gmail.com"
+    "asia.com", "india.com" , "asia.com" , "india.com" ,
+    "asia.jp" , "india.jp" , "japan.com" , "japan.jp" , "asia.jp" ,
+    "japan_news.jp"
 )
