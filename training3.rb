@@ -7,9 +7,7 @@ def express_addresses(*address)
 
    addresses.each do |address|
      key = address[0]
-     number = address[1].size
-     puts "#{key} "
-     puts number
+     puts key
    end
 end
 
