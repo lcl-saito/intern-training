@@ -1,16 +1,30 @@
-def express_addresses(*address)
+def express_addresses(addresses)
+  gmail = 0
+  yahoo = 0
+  ezweb = 0
 
-  addresses = address.group_by{ |domain| domain }
+    addresses.each do |address|
+      if address.include?("gmail.com")
+        gmail += 1
+      elsif address.include?("yahoo.jp")
+        yahoo += 1
+      elsif  address.include?("ezweb.ne.jp")
+        ezweb += 1
+      end
+    end
 
-  addresses.each do |address|
-     key = address[0]
-     number = address[1].size
-     puts "#{key}: #{number}"
-   end
+  domains = {"gmail.com" => gmail , "yahoo.jp" => yahoo , "ezweb.ne.jp" => ezweb}
+
+    domains.each do |domain|
+      puts "#{domain[0]} : #{domain[1]}"
+    end
 end
 
-express_addresses(
-    "asia.com", "india.com" , "asia.com" , "india.com" ,
-    "asia.jp" , "india.jp" , "japan.com" , "japan.jp" , "asia.jp" ,
-    "japan_news.jp"
-)
+addresses = [
+    "asia@gmail.com", "japan@gmail.com" , "asia@yahoo.jp" , "india@ezweb.ne.jp" ,
+]
+
+express_addresses(addresses)
+
+
+
