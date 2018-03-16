@@ -1,0 +1,16 @@
+require 'date'
+
+def express_date(year,month)
+
+  date = Date.new(year,month,-1)
+  month_last_date = date.day
+  initial_date = 1
+
+  while month_last_date >= initial_date
+    puts  "#{year}年#{month}月#{initial_date}日"
+    initial_date = initial_date + 1
+    end
+end
+
+  express_date(1996,2)
+
