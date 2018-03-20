@@ -2,12 +2,10 @@ def express_addresses(address)
 
   addresses = address.group_by {|domain| domain.split("@")[1]}
 
-  addresses.each do |address|
-    key = address[0]
-    number = address[1].size
-    domains = { key => number }
-    puts domains
-  end
+  domains = {"gmail.com" => addresses["gmail.com"].size , "yahoo.jp" => addresses["yahoo.jp"].size ,
+            "ezweb.ne.jp" => addresses["ezweb.ne.jp"].size , "softbank.ne.jp" => addresses["softbank.ne.jp"].size
+            }
+  puts domains
 end
 
 address = [
@@ -16,3 +14,4 @@ address = [
 ]
 
 express_addresses(address)
+
