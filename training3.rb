@@ -2,11 +2,12 @@ def express_addresses(address)
 
   addresses = address.group_by {|domain| domain.split("@")[1]}
 
- addresses.each do |address|
-   key = address[0]
-   number = address[1].size
-   puts "#{key}: #{number}"
-   end
+  addresses.each do |address|
+    key = address[0]
+    number = address[1].size
+    domains = { key => number }
+    puts domains
+  end
 end
 
 address = [
