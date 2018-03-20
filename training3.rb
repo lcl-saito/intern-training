@@ -1,17 +1,17 @@
-def express_addresses(address)
+def express_addresses(addresses)
   domains = {}
-  addresses = address.group_by{|domain| domain.split("@")[1]}
+  domains = addresses.group_by{|domain| domain.split("@")[1]}
 
-   addresses.each do |address|
-      domains[address[0]] = address[1].size
+   domains.each do |domain|
+      domains[domain[0]] = domain[1].size
    end
    puts domains
 end
 
-address = [
+addresses = [
            "asia@gmail.com", "japan@gmail.com" , "asia@yahoo.jp" ,   "india@ezweb.ne.jp" , "korea@yahoo.jp" ,
            "china@gmail.com" , "mongol@softbank.ne.jp" ,
            ]
 
-express_addresses(address)
+express_addresses(addresses)
 
